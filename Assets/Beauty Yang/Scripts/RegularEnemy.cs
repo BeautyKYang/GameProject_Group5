@@ -38,7 +38,7 @@ public class RegularEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name == "PlayerBody")
+        if(other.name == "Player")
         {
             print("Player Detected");
         }
@@ -80,7 +80,7 @@ public class RegularEnemy : MonoBehaviour
         }
 
         //Raycast from the front
-        if (Physics.Raycast(rayOrigin, Vector3.left, out hit, DetectionDistance))
+        if (Physics.Raycast(rayOrigin, transform.forward, out hit, DetectionDistance))
         {
             //Check if raycast hit the player
             if (hit.transform.GetComponent<PlayerMovement>())
@@ -91,7 +91,7 @@ public class RegularEnemy : MonoBehaviour
         }
 
         //Raycast from the back
-        if (Physics.Raycast(rayOrigin, Vector3.left, out hit, DetectionDistance))
+        if (Physics.Raycast(rayOrigin, -transform.forward, out hit, DetectionDistance))
         {
             //Check if raycast hit the player
             if (hit.transform.GetComponent<PlayerMovement>())
