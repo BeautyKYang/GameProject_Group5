@@ -49,6 +49,9 @@ public class PlayerDetection : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enemy rigidbody is present
+    /// </summary>
     private void ActiveEnemy()
     {
         //Gets the enemy rigibody component
@@ -62,10 +65,27 @@ public class PlayerDetection : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enemy patrols the area
+    /// </summary>
     private void Patrolling()
     {
-        if (!walkPointSet) SearchWalkPoint();
+        if (enemyRb == null) return;
 
+        Vector3 distanceWalkPoint = transform.position - walkPoint;
+
+        if (walkPointSet && distanceWalkPoint.magnitude < 1f)
+        {
+            walkPointSet = false; //Enemy will find a new point
+        }
+
+        //If no walk point is set, find new one
+        if (!walkPointSet)
+        {
+            SearchWalkPoint();
+        }
+
+        //If walk point is set
         if (walkPointSet)
         {
             //Calculates the direction
@@ -81,6 +101,9 @@ public class PlayerDetection : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enemy will find a walk point to step into
+    /// </summary>
     private void SearchWalkPoint()
     {
         //Picks a random point in range
@@ -91,6 +114,7 @@ public class PlayerDetection : MonoBehaviour
 
         RaycastHit hit;
 
+        //Uses a large distance for raycast
         if (Physics.Raycast(walkPoint, Vector3.down, out hit, 5f, whatIsGround))
         {
             walkPoint.y = hit.point.y + 0.1f;
@@ -102,6 +126,9 @@ public class PlayerDetection : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enemy will follow player once they are detected within range
+    /// </summary>
     private void FollowPlayer()
     {
         if (enemyRb == null || player == null) return;
