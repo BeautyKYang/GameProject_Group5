@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.AI;
 
 /*
  * Beauty Yang
@@ -12,8 +11,6 @@ using UnityEngine.AI;
 
 public class PlayerDetection : MonoBehaviour
 {
-    public NavMeshAgent enemyAgent;
-
     public Transform player;
 
     public LayerMask whatIsGround, whatIsPlayer;
@@ -28,7 +25,6 @@ public class PlayerDetection : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSight, playerInAttackRange;
 
-    private CharacterController enemyController;
     private Rigidbody enemyRb;
 
     private void Start()
@@ -42,11 +38,12 @@ public class PlayerDetection : MonoBehaviour
         playerInSight = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSight && !playerInAttackRange)
+        //Player is detected
+        if (playerInSight && playerInAttackRange)
         {
             FollowPlayer();
         }
-        else
+        else //Player is not detected
         {
             Patrolling();
         }
@@ -54,8 +51,15 @@ public class PlayerDetection : MonoBehaviour
 
     private void ActiveEnemy()
     {
+        //Gets the enemy rigibody component
         enemyRb = GetComponent<Rigidbody>();
-        enemyRb.freezeRotation = true;
+
+        //Find the player's transform by the tag
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (enemyRb != null)
+        {
+            enemyRb.freezeRotation = true;
+        }
     }
 
     private void Patrolling()
@@ -64,11 +68,15 @@ public class PlayerDetection : MonoBehaviour
 
         if (walkPointSet)
         {
+            //Calculates the direction
             Vector3 direction = (walkPoint - transform.position).normalized;
+
+            //Sets the rigidbody's velocity
             enemyRb.velocity = direction * speed;
         }
         else
         {
+            //Stop movement when patrolling is complete
             enemyRb.velocity = Vector3.zero;
         }
     }
@@ -81,9 +89,16 @@ public class PlayerDetection : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+        RaycastHit hit;
+
+        if (Physics.Raycast(walkPoint, Vector3.down, out hit, 5f, whatIsGround))
         {
-            walkPointSet |= true;
+            walkPoint.y = hit.point.y + 0.1f;
+            walkPointSet = true;
+        }
+        else
+        {
+            walkPointSet = false;
         }
     }
 
@@ -91,10 +106,13 @@ public class PlayerDetection : MonoBehaviour
     {
         if (enemyRb == null || player == null) return;
 
+        //Calculate the direction vector from enemy to player
         Vector3 direction = (player.position - transform.position).normalized;
 
+        //Rotate the enemy to face the player
         transform.LookAt(player.position);
 
+        //CharacterController will move the enemy
         enemyRb.velocity = direction * speed;
     }
 }
