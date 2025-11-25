@@ -63,7 +63,7 @@ public class Movement : MonoBehaviour
         {
             direction = Vector3.down;
             //transform.position += direction * speed * time.deltaTime;
-            transform.position += new Vector3(1, 0, 0) * speed * Time.deltaTime;
+            transform.position += new Vector3(-1, 0, 0) * speed * Time.deltaTime;
 
 
         }
