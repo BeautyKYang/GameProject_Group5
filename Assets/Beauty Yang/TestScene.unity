@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 359470994}
   - component: {fileID: 359470999}
   - component: {fileID: 359471000}
+  - component: {fileID: 359471001}
   m_Layer: 0
   m_Name: RegularEnemy
   m_TagString: Untagged
@@ -285,6 +286,20 @@ MonoBehaviour:
   attackRange: 20
   playerInSight: 0
   playerInAttackRange: 0
+--- !u!114 &359471001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359470993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f98c02ec44fb84db8daca7cc7e7cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 359470993}
+  lives: 3
 --- !u!1 &1296726608
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +671,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5471647167580226945, guid: 3cc4f83a5a73c9246984efb908143e37, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1411683290}
+    - target: {fileID: 5471647167580226945, guid: 3cc4f83a5a73c9246984efb908143e37, type: 3}
+      propertyPath: FireBall
+      value: 
+      objectReference: {fileID: 2801566054997673630, guid: 46596e4b275671f408f75f9e20318104, type: 3}
     - target: {fileID: 8546960929438367155, guid: 3cc4f83a5a73c9246984efb908143e37, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.000088915214
