@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Fireball_player : MonoBehaviour
 {
+
+   
     public GameObject FireballPrefab;
+   
+     public int Fireball = 10;
 
-
-    public int Fireball = 10;
-
+    public int Lives; 
 
 
     public float speed = 20f;
@@ -23,7 +25,7 @@ public class Fireball_player : MonoBehaviour
         }
     }
 
-    public void Update()
+    private void Update()
     {
         //Bullets will shoot straight ahead
         transform.Translate(Vector3.right * speed * Time.deltaTime);

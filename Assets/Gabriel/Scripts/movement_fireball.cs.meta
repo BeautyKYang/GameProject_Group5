@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 0187a786ca59b8346afc3ad0bc0efc72
+guid: 3343e89e01906ef448ea0e7aa3fe2a64
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - FireballPrefab: {fileID: 2900194136005619769, guid: 6f45f484b1cdb8048813f4fd3fc7e53c, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
