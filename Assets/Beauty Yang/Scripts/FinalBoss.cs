@@ -44,4 +44,27 @@ public class FinalBoss : MonoBehaviour
             moveDirection *= -1;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //If bullet hits the boss the enemy dies
+        if (other.GetComponent<PlayerFireballTest>()) //Change prefab to actual fireball!
+        {
+            print("Final Boss has been hit");
+            DecreaseLife(); //Enemy loses a life
+            Destroy(other.gameObject);
+        }
+    }
+
+    public void DecreaseLife()
+    {
+        //Subtract one life
+        lives--;
+
+        if (lives <= 0) //Takes away one life at a time until Final Boss is destroyed
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
 }
