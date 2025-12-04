@@ -11,8 +11,8 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public GameObject FireBall_Test; //Switch this out for the actual fireball prefab
-    public GameObject PlayerShooting_Test; //Switch this out and put the actual Player prefab
+    public GameObject Fireball; //Switch this out for the actual fireball prefab
+    public GameObject Player; //Switch this out and put the actual Player prefab
     public float shootingRate = 1f;
     public bool useFireBall = true;
 
@@ -25,7 +25,7 @@ public class PlayerShooting : MonoBehaviour
             if (useFireBall)
             {
                 //Fireball prefab will spawn
-                Instantiate(FireBall_Test, PlayerShooting_Test.transform.position, PlayerShooting_Test.transform.rotation);
+                Instantiate(Fireball, Player.transform.position, Player.transform.rotation);
                 useFireBall = false;
                 StartCoroutine(DelayFireBall());
             }

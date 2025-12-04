@@ -3,7 +3,9 @@ guid: 35b092e1b33f0b64380d9f4e719936fe
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - FireBall: {fileID: 2900194136005619769, guid: 6f45f484b1cdb8048813f4fd3fc7e53c, type: 3}
+  - Player: {fileID: 2457019474343100107, guid: fe84973efe698384e8266f6e4f51200a, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
