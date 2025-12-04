@@ -51,7 +51,7 @@ public class FinalBoss : MonoBehaviour
         if (other.GetComponent<PlayerFireballTest>()) //Change prefab to actual fireball!
         {
             print("Final Boss has been hit");
-            DecreaseLife(); //Enemy loses a life
+            DecreaseLife(); //Boss loses a life
             Destroy(other.gameObject);
         }
     }
