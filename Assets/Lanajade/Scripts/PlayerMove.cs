@@ -11,6 +11,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     private bool is_grounded;
+    public float jumpForce = 0.0f;
 
     //The rigid body attached to the player
     private Rigidbody body;
@@ -25,14 +26,10 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Jump();
+
         float translation = Input.GetAxis("Vertical") * 10 * Time.deltaTime;
         float straffe = Input.GetAxis("Horizontal") * 10 * Time.deltaTime;
-
-        if (!is_grounded)
-            straffe /= 2;
-
-        if (!is_grounded)
-            translation /= 2;
 
         //Translate to move.
         transform.Translate(straffe, 0, translation);
@@ -46,5 +43,38 @@ public class PlayerMove : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
+    }
+
+    private void Jump()
+    {
+        RaycastHit hit;
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f))
+            {
+                Debug.Log("Touching the ground");
+
+                //adds force to jump
+                body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            }
+            else
+            {
+                Debug.Log("can't jump, not grounded");
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "JumpPad")
+        {
+        }
+    }
+
+    IEnumerator JumpPadEffect()
+    {
+        yield return new WaitForSeconds(5);
+        jumpForce = jumpForce * 2;
     }
 }

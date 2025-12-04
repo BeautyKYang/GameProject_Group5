@@ -41,5 +41,11 @@ public class PlayerLives : MonoBehaviour
             print("The boss hit you with a fireball! you lose 20 life!");
             print("Current Health: " + Health);
         }
+
+        if(other.gameObject.tag == "DeathFloor")
+        {
+            Health = 0;
+            print("You fell into lava!");
+        }
     }
 }

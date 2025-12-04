@@ -38,7 +38,7 @@ public class FireballBoss : MonoBehaviour
 
         if (transform.position.x <= leftBoundary || transform.position.x >= rightBoundary)
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
@@ -46,7 +46,7 @@ public class FireballBoss : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }

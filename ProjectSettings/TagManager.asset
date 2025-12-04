@@ -7,6 +7,8 @@ TagManager:
   - RegEnemy
   - FireballBoss
   - Potion
+  - DeathFloor
+  - JumpPad
   layers:
   - Default
   - TransparentFX
