@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /*
@@ -15,6 +16,12 @@ public class Inventory : MonoBehaviour
     public Item[] inventoryArray;
     public int maxInventory;
     public int ingredients = 100;
+    public int ingredientsAdd = 0;
+
+    public GameObject HealthPotion;
+    public GameObject DamagePotion;
+    public GameObject SpeedPotion;
+
 
     public void Start()
     {
@@ -26,13 +33,16 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            print("Activated inventory slot 0.");
+            print("Activated inventory slot 1.");
 
             Item firstItem = RecallOne();
 
             if (firstItem != null)
             {
                 print("First potion obtained: " + firstItem.potionName);
+                                
+                print("using potion");
+                StartCoroutine(DamageEffect());     
             }
             else
             {
@@ -42,13 +52,17 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            print("Activated inventory slot 1.");
+            print("Activated inventory slot 2.");
 
             Item SecondItem = RecallTwo();
 
             if (SecondItem != null)
             {
-                print("Second potion obtained: " + SecondItem.potionName);
+                if (SecondItem == DamagePotion)
+                {
+                    print("using potion");
+                    StartCoroutine(DamageEffect());
+                }
             }
             else
             {
@@ -58,13 +72,19 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            print("Activated inventory slot 2.");
+            print("Activated inventory slot 3.");
 
             Item ThirdItem = RecallThree();
 
             if (ThirdItem != null)
             {
-                print("Second potion obtained: " + ThirdItem.potionName);
+                print("Third potion obtained: " + ThirdItem.potionName);
+                
+                if (ThirdItem == DamagePotion)
+                {
+                    print("using potion");
+                    StartCoroutine(DamageEffect());
+                }
             }
             else
             {
@@ -102,6 +122,25 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
+
+        if (other.gameObject.tag == "Ingredient")
+        {
+            print(ingredientsAdd + " added to " + ingredients + " ingredients in your pouch.");
+            ingredients += ingredientsAdd;
+            print(ingredients + " ingredients in your pouch.");
+
+            other.gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator DamageEffect()
+    {
+        GetComponent<DamagePotionEffect>().damageEffectHappening = true;
+        print("Now using damage potion. Insta kill enemies for 5 seconds.");
+
+        yield return new WaitForSeconds(5);
+
+        GetComponent<DamagePotionEffect>().damageEffectHappening = false;
     }
 
     private bool AddItem(Item itemToAdd)
@@ -125,7 +164,7 @@ public class Inventory : MonoBehaviour
 
                 // Print a message indicating the successful addition of the item to the inventory.
                 print("added to slot " + index + ": " + inventoryArray[index].potionName +
-                    " with a gold value of " + inventoryArray[index].ingredients);
+                    " with an ingredient value of " + inventoryArray[index].ingredients);
 
                 // No need to check more elements in the array, break out of the loop
                 break;
@@ -135,6 +174,10 @@ public class Inventory : MonoBehaviour
         return success;
     }
 
+    /// <summary>
+    /// recalls first object in inventory
+    /// </summary>
+    /// <returns></returns>
     public Item RecallOne()
     {
         Item itemCalled = null;
@@ -153,6 +196,10 @@ public class Inventory : MonoBehaviour
         return itemCalled;
     }
 
+    /// <summary>
+    /// recalls second object in inventory
+    /// </summary>
+    /// <returns></returns>
     public Item RecallTwo() 
     {
         Item itemCalled = null;
@@ -171,6 +218,10 @@ public class Inventory : MonoBehaviour
         return itemCalled;
     }
 
+    /// <summary>
+    /// recalls third object in inventory
+    /// </summary>
+    /// <returns></returns>
     public Item RecallThree() 
     {
         Item itemCalled = null;

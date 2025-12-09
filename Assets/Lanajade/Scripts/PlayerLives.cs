@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * Dalman, Lanajade
@@ -22,7 +23,8 @@ public class PlayerLives : MonoBehaviour
     {
         if (Health <= 0)
         {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene(1);
+            Time.timeScale = 1;
         }
     }
 

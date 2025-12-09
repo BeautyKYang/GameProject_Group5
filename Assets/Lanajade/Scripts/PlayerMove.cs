@@ -11,7 +11,10 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     private bool is_grounded;
+    public bool jumpEffect = false;
+    
     public float jumpForce = 0.0f;
+    public int effectMuliplier = 4;
 
     //The rigid body attached to the player
     private Rigidbody body;
@@ -69,12 +72,21 @@ public class PlayerMove : MonoBehaviour
     {
         if (other.gameObject.tag == "JumpPad")
         {
+            jumpEffect = true;
+            StartCoroutine(JumpPadEffect());
         }
     }
 
     IEnumerator JumpPadEffect()
     {
-        yield return new WaitForSeconds(5);
-        jumpForce = jumpForce * 2;
+        if (jumpEffect == true)
+        {
+            jumpForce = jumpForce * effectMuliplier;
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        
+        jumpEffect = false;
+        jumpForce = jumpForce / effectMuliplier; 
     }
 }

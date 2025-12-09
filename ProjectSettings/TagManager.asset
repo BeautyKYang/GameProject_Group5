@@ -9,6 +9,8 @@ TagManager:
   - Potion
   - DeathFloor
   - JumpPad
+  - WhatIsGround
+  - Ingredient
   layers:
   - Default
   - TransparentFX

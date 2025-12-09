@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Lanajade/MainMenu.unity
+    guid: cbde82a548f54424f856c84a66c88b20
+  - enabled: 1
+    path: Assets/Lanajade/DeathMenu.unity
+    guid: 78f76c01374459d48b201dc5bf2774f3
+  - enabled: 1
+    path: Assets/Lanajade/EndGame.unity
+    guid: 23eb464a76c4c554481e2b79bb8a0bb2
   m_configObjects: {}
