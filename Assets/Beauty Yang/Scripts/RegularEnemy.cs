@@ -11,7 +11,7 @@ using UnityEngine;
 public class RegularEnemy : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public int lives = 3;
+    public int lives = 50;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,9 +27,11 @@ public class RegularEnemy : MonoBehaviour
     public void DecreaseLife()
     {
         //Subtract one life
-        lives--;
+        lives -= 15;
 
-        if (lives <= 0) //Takes away one life at a time until Regular Enemy is destroyed
+        print("Enemy Current Lives: " + lives);
+
+        if (lives <= 0) //Checks life until Regular Enemy is destroyed
         {
             Destroy(gameObject);
             return;

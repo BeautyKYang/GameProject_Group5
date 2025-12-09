@@ -59,9 +59,9 @@ public class FinalBoss : MonoBehaviour
     public void DecreaseLife()
     {
         //Subtract one life
-        lives--;
+        lives -= 15;
 
-        if (lives <= 0) //Takes away one life at a time until Final Boss is destroyed
+        if (lives <= 0) //Checks lives until Final Boss is destroyed
         {
             Destroy(gameObject);
             return;
