@@ -1912,6 +1912,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4199308342543723548, guid: deeb8e3cf594f204a80b1f069c5b9b2d, type: 3}
+      propertyPath: leftBounds
+      value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: -4199308342543723548, guid: deeb8e3cf594f204a80b1f069c5b9b2d, type: 3}
+      propertyPath: rightBounds
+      value: 159
+      objectReference: {fileID: 0}
+    - target: {fileID: -4199308342543723548, guid: deeb8e3cf594f204a80b1f069c5b9b2d, type: 3}
       propertyPath: FinalBossprefab
       value: 
       objectReference: {fileID: 1065696113}
@@ -1921,7 +1929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8712276801897748721, guid: deeb8e3cf594f204a80b1f069c5b9b2d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 129.9
       objectReference: {fileID: 0}
     - target: {fileID: 8712276801897748721, guid: deeb8e3cf594f204a80b1f069c5b9b2d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1929,7 +1937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8712276801897748721, guid: deeb8e3cf594f204a80b1f069c5b9b2d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.25
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 8712276801897748721, guid: deeb8e3cf594f204a80b1f069c5b9b2d, type: 3}
       propertyPath: m_LocalRotation.w

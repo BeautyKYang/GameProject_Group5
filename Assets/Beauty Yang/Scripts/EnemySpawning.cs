@@ -12,7 +12,7 @@ public class EnemySpawning : MonoBehaviour
 {
     public GameObject RegularEnemyPrefab;
 
-    private float EnemySwarm = 3f;
+    private float EnemySwarm = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class EnemySpawning : MonoBehaviour
         yield return new WaitForSeconds(EnemySwarm); //Wait for the swarm to take place
 
         //Random range where the enemies will spawn in
-        GameObject newEnemy = Instantiate(RegularEnemyPrefab, new Vector3(Random.Range(-5, 5), Random.Range(-6, 6), 0), Quaternion.identity);
+        GameObject newEnemy = Instantiate(RegularEnemyPrefab, new Vector3(Random.Range(-5, 0), Random.Range(-6, 0), 0), Quaternion.identity);
         StartCoroutine(spawnEnemy(EnemySwarm, RegularEnemyPrefab));
     }
 }
