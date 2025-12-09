@@ -7,15 +7,18 @@ TagManager:
   - RegEnemy
   - FireballBoss
   - Potion
-  - Key
+  - DeathFloor
+  - JumpPad
+  - WhatIsGround
+  - Ingredient
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 

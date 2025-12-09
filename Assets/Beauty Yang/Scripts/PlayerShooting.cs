@@ -13,8 +13,9 @@ public class PlayerShooting : MonoBehaviour
 {
     public GameObject Fireball; //Switch this out for the actual fireball prefab
     public GameObject Player; //Switch this out and put the actual Player prefab
+    public GameObject FireballPrefab;
     public float shootingRate = 1f;
-    public bool useFireBall = true;
+    public bool useFireBall;
 
     // Update is called once per frame
     void Update()
@@ -25,7 +26,7 @@ public class PlayerShooting : MonoBehaviour
             if (useFireBall)
             {
                 //Fireball prefab will spawn
-                Instantiate(Fireball, Player.transform.position, Player.transform.rotation);
+                GameObject Fireball = Instantiate(FireballPrefab, Player.transform.position, Player.transform.rotation);
                 useFireBall = false;
                 StartCoroutine(DelayFireBall());
             }

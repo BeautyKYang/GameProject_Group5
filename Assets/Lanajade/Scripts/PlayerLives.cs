@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * Dalman, Lanajade
@@ -22,7 +23,8 @@ public class PlayerLives : MonoBehaviour
     {
         if (Health <= 0)
         {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene(1);
+            Time.timeScale = 1;
         }
     }
 
@@ -40,6 +42,12 @@ public class PlayerLives : MonoBehaviour
             Health -= 20;
             print("The boss hit you with a fireball! you lose 20 life!");
             print("Current Health: " + Health);
+        }
+
+        if(other.gameObject.tag == "DeathFloor")
+        {
+            Health = 0;
+            print("You fell into lava!");
         }
     }
 }
