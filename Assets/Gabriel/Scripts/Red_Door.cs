@@ -6,13 +6,13 @@ public class Red_Door : MonoBehaviour
 {
     //Start is called before the fist frame update 
     public int redLocks = 1;  //how many keys needed to open this door
-   private void OnCollisionEnter(Collision collision)
+   private void OnCollisionEnter(Collision other)
    {
         //Check if player collided with this door 
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             //stores a refence to the player script 
-            Player playerScript = collision.gameObject.GetComponent<Player>();
+            Player playerScript = other.gameObject.GetComponent<Player>();
 
             //Check if player key is >= this doors number of locks 
             if (playerScript.redKeys >= redLocks)
