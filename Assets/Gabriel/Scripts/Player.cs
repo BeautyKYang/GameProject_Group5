@@ -9,12 +9,12 @@ using UnityEngine;
    */
 public class Player : MonoBehaviour
 {
-    public int redKeys;
-    public int blueKeys;
-    public int greenKeys;
-    public int goldKeys;
-    public int cyanKeys;
-    public int purpleKeys;
+    public int redKeys = 0;
+    public int blueKeys = 0;
+    public int greenKeys = 0;
+    public int goldKeys = 0;
+    public int cyanKeys = 0;
+    public int purpleKeys= 0;
 
 
 }

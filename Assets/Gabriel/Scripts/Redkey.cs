@@ -1,21 +1,35 @@
+using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class Redkey : MonoBehaviour
 {
-    //after character collides with a key 
+
     public void OnTriggerEnter(Collider other)
     {
-
-        //recognize that the player ran into the key
-        if (other.tag == "Player")
+        //recognize that the player ran into the key 
+        if (other.gameObject.tag == "Key")
         {
-            //the player collects a key, the key is destroyed 
-            other.GetComponent<Player>().redKeys++;
-            
-            Destroy(gameObject);
-        }
 
+          //the player collect a key, the key is destroyed 
+            GetComponent<Player>().redKeys++;
+
+            Destroy(other.gameObject);
+
+            print("Working key");
+        }
     }
+
+
+    
+
+
+
+
+
+
+
 }
