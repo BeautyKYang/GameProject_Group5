@@ -5,7 +5,7 @@ using UnityEngine;
 public class Red_Door : MonoBehaviour
 {
     //Start is called before the fist frame update 
-    private int redLocks = 1;  //how many keys needed to open this door
+    public int redLocks = 1;  //how many keys needed to open this door
    private void OnCollisionEnter(Collision collision)
    {
         //Check if player collided with this door 
@@ -17,7 +17,7 @@ public class Red_Door : MonoBehaviour
             //Check if player key is >= this doors number of locks 
             if (playerScript.redKeys >= redLocks)
             {
-
+                print("working door");
                 //reduce player key amount and destroy door
                 playerScript.redKeys -= redLocks;
                 Destroy(gameObject);
@@ -25,7 +25,7 @@ public class Red_Door : MonoBehaviour
 
             }
 
-           
+          
 
 
 
