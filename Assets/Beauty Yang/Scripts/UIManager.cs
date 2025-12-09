@@ -12,13 +12,13 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public PlayerLives playerLife;
+    public PlayerLives PlayerLife;
     public TMP_Text healthText;
     public int Health = 0;
 
     // Update is called once per frame
     void Update()
     {
-        healthText.text = "Health: " + playerLife.Health;
+        healthText.text = "Health: " + PlayerLife.Health;
     }
 }
