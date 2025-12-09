@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7374081825412839811}
   - component: {fileID: 5258066618552793388}
   - component: {fileID: 8804291223929612191}
-  - component: {fileID: 2208891608081015063}
+  - component: {fileID: 383652140193903660}
   m_Layer: 0
   m_Name: Cam
   m_TagString: Untagged
@@ -93,7 +93,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5253606349908084350}
   m_Enabled: 1
---- !u!114 &2208891608081015063
+--- !u!114 &383652140193903660
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,11 +120,11 @@ GameObject:
   - component: {fileID: 3322866607647451934}
   - component: {fileID: 4749668011025172777}
   - component: {fileID: 7054666533511442284}
-  - component: {fileID: 5952746901073446143}
   - component: {fileID: 2619862699825325718}
   - component: {fileID: 2229729289680606308}
   - component: {fileID: 7212857868109678867}
   - component: {fileID: 3054814678080323370}
+  - component: {fileID: 3704013279654419266}
   m_Layer: 0
   m_Name: Player(MoveLives)
   m_TagString: Player
@@ -248,21 +248,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &5952746901073446143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7587987855907100758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f522dd92bff8cb4482ceddb65c2273b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpEffect: 0
-  jumpForce: 5
-  effectMuliplier: 4
 --- !u!114 &2619862699825325718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,3 +309,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageEffectHappening: 0
+--- !u!114 &3704013279654419266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587987855907100758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f522dd92bff8cb4482ceddb65c2273b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpEffect: 0
+  jumpForce: 20
+  effectMuliplier: 4

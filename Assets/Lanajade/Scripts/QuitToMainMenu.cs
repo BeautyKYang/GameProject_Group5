@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class QuitToMainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     // Start is called before the first frame update
     public void QuitGame()
     {
