@@ -12,10 +12,12 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     public GameObject Fireball; //Switch this out for the actual fireball prefab
-    public GameObject Player; //Switch this out and put the actual Player prefab
-    public GameObject FireballPrefab;
+    public GameObject Staff; //Switch this out and put the actual Player prefab
+
+    public Transform aimPoint;
+
     public float shootingRate = 1f;
-    public bool useFireBall;
+    public bool useFireBall = true;
 
     // Update is called once per frame
     void Update()
@@ -26,13 +28,12 @@ public class PlayerShooting : MonoBehaviour
             if (useFireBall)
             {
                 //Fireball prefab will spawn
-                GameObject Fireball = Instantiate(FireballPrefab, Player.transform.position, Player.transform.rotation);
+                Instantiate(Fireball, aimPoint.transform.position, aimPoint.transform.rotation);
                 useFireBall = false;
                 StartCoroutine(DelayFireBall());
             }
         }
     }
-
     /// <summary>
     /// Delays the execution of fireballs for a second
     /// </summary>
