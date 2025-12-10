@@ -16,9 +16,14 @@ public class UIManager : MonoBehaviour
     public TMP_Text healthText;
     public int Health = 0;
 
+    public Inventory DmgPotion;
+    public TMP_Text damagePotionText;
+    public int Potion = 0;
+
     // Update is called once per frame
     void Update()
     {
         healthText.text = "Health: " + PlayerLife.Health;
+        damagePotionText.text = "Damage Potion: " + DmgPotion.DamagePotion;
     }
 }

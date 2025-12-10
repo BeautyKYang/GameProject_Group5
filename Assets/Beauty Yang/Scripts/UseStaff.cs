@@ -12,15 +12,8 @@ public class UseStaff : MonoBehaviour
 {
     public bool useFireBall;
 
-    // Start is called before the first frame update
-    void Start()
+    public void FireBall()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

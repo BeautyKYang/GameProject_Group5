@@ -12,7 +12,7 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     public GameObject Fireball; //Switch this out for the actual fireball prefab
-    public GameObject Staff; //Switch this out and put the actual Player prefab
+    public GameObject Player; //Switch this out and put the actual Player prefab
 
     public Transform aimPoint;
 
