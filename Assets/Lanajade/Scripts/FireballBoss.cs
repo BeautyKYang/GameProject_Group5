@@ -20,8 +20,8 @@ public class FireballBoss : MonoBehaviour
 
     void Start()
     {
-        leftBoundary = maxLeft.transform.position.x;
-        rightBoundary = maxRight.transform.position.x;
+        leftBoundary = maxLeft.transform.position.z;
+        rightBoundary = maxRight.transform.position.z;
     }
 
     // Update is called once per frame
@@ -29,14 +29,14 @@ public class FireballBoss : MonoBehaviour
     {
         if (goingLeft)
         {
-            transform.position += speed * Vector3.left * Time.deltaTime;
+            transform.position += speed * Vector3.back * Time.deltaTime;
         }
         else
         {
-            transform.position += speed * Vector3.right * Time.deltaTime;
+            transform.position += speed * Vector3.forward * Time.deltaTime;
         }
 
-        if (transform.position.x <= leftBoundary || transform.position.x >= rightBoundary)
+        if (transform.position.z <= leftBoundary || transform.position.z >= rightBoundary)
         {
             Destroy(gameObject);
         }
@@ -45,6 +45,14 @@ public class FireballBoss : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Cover")
         {
             Destroy(gameObject);
         }
