@@ -29,11 +29,11 @@ public class FireballBoss : MonoBehaviour
     {
         if (goingLeft)
         {
-            transform.position += speed * Vector3.left * Time.deltaTime;
+            transform.position += speed * Vector3.right * Time.deltaTime;
         }
         else
         {
-            transform.position += speed * Vector3.right * Time.deltaTime;
+            transform.position += speed * Vector3.left * Time.deltaTime;
         }
 
         if (transform.position.x <= leftBoundary || transform.position.x >= rightBoundary)
@@ -45,6 +45,14 @@ public class FireballBoss : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Cover")
         {
             Destroy(gameObject);
         }
