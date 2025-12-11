@@ -130,10 +130,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   walkPoint: {x: 0, y: 0, z: 0}
-  walkingRange: 20
+  walkingRange: 10
   speed: 5
-  sightRange: 5
-  attackRange: 5
+  sightRange: 10
+  attackRange: 10
   playerInSight: 0
   playerInAttackRange: 0
 --- !u!114 &6661768632386097783
