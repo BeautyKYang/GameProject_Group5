@@ -295,7 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fireball: {fileID: 2801566054997673630, guid: 46596e4b275671f408f75f9e20318104, type: 3}
   Player: {fileID: 7587987855907100758}
-  aimPoint: {fileID: 0}
+  aimPoint: {fileID: 5030173267443669359}
   shootingRate: 1
   useFireBall: 1
 --- !u!114 &3054814678080323370
