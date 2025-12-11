@@ -25,7 +25,7 @@ public class EnemySpawning : MonoBehaviour
         yield return new WaitForSeconds(EnemySwarm); //Wait for the swarm to take place
 
         //Random range where the enemies will spawn in
-        GameObject newEnemy = Instantiate(RegularEnemyPrefab, new Vector3(Random.Range(-5, 0), Random.Range(-6, 0), 0), Quaternion.identity);
+        GameObject newEnemy = Instantiate(RegularEnemyPrefab, new Vector3(Random.Range(0, 5), Random.Range(0, 0), 0), Quaternion.identity);
         StartCoroutine(spawnEnemy(EnemySwarm, RegularEnemyPrefab));
     }
 }
