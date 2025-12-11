@@ -182,8 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f36ff03616d364e97ee0f75e13c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  goingLeft: 0
+  speed: 15
+  goingLeft: 1
   maxLeft: {fileID: 3358724204172834084}
   maxRight: {fileID: 4600559993059839364}
   leftBoundary: 0
