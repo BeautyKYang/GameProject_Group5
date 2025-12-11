@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpEffect: 0
-  jumpForce: 20
+  jumpForce: 5
   effectMuliplier: 4
 --- !u!114 &1837773739075572941
 MonoBehaviour:
