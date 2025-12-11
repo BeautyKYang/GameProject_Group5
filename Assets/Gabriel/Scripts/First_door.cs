@@ -31,4 +31,6 @@ public class First_door : MonoBehaviour
 
 
         }
+
     }
+}
