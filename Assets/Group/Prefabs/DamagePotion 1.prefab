@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3609552150312106751}
   - component: {fileID: 7348767966061797571}
   - component: {fileID: 1647830060765825747}
-  - component: {fileID: 3124661104399208232}
   m_Layer: 0
   m_Name: Cylinder (20)
   m_TagString: Untagged
@@ -84,29 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3124661104399208232
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067583905440985012}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &5129279017697700083
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,10 +95,9 @@ GameObject:
   - component: {fileID: 8362546321994726928}
   - component: {fileID: 7665182083589699084}
   - component: {fileID: 2793792338613403554}
-  - component: {fileID: 349666646261229687}
   m_Layer: 0
   m_Name: DamagePotion
-  m_TagString: Potion
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,20 +188,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &349666646261229687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5129279017697700083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e8d790d719c1a47a62b112ffd99cfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  potionName: Damage Potion
-  ingredients: 20
 --- !u!1 &6532002928321203607
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,10 +200,9 @@ GameObject:
   - component: {fileID: 6320721427690717426}
   - component: {fileID: 1764646160717099028}
   - component: {fileID: 82253698095286923}
-  - component: {fileID: 766555538902292323}
   m_Layer: 0
   m_Name: DamagePotion (1)
-  m_TagString: Potion
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,20 +293,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &766555538902292323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532002928321203607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e8d790d719c1a47a62b112ffd99cfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  potionName: Damage Potion
-  ingredients: 20
 --- !u!1 &8778089105274582508
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,9 +302,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6119453647073333746}
+  - component: {fileID: 6439625230527841518}
+  - component: {fileID: 5756585061840130465}
   m_Layer: 0
   m_Name: DamagePotion 1
-  m_TagString: Untagged
+  m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,3 +329,38 @@ Transform:
   - {fileID: 8103874991017787767}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6439625230527841518
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8778089105274582508}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7187289, y: 1.0636711, z: 1}
+  m_Center: {x: -0.0646866, y: 0.031835556, z: 0}
+--- !u!114 &5756585061840130465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8778089105274582508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e8d790d719c1a47a62b112ffd99cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potionName: Damage Potion
+  ingredients: 20
