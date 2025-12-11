@@ -10,7 +10,7 @@ public class CyanKey : MonoBehaviour
     {
 
         //recognize that the player ran into the key
-        if (other.tag == "Player")
+        if (other.tag == "CyanKeys")
         {
             //the player collects a key, the key is destroyed 
             other.GetComponent<Player>().cyanKeys++;

@@ -5,14 +5,16 @@ using UnityEngine;
 public class GreenKey : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    //after character collides with a key 
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //recognize that the player ran into the key
+        if (other.tag == "GreenKey")
+        {
+            //the player collects a key, the key is destroyed 
+            other.GetComponent<Player>().greenKeys++;
+            Destroy(gameObject);
+        }
     }
 }
