@@ -11,7 +11,7 @@ public class Redkey : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         //recognize that the player ran into the key 
-        if (other.gameObject.tag == "Key")
+        if (other.gameObject.tag == "RedKey")
         {
 
           //the player collect a key, the key is destroyed 

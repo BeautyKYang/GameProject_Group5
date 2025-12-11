@@ -2,10 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+   /*Gabriel Delatorre
+   * 12 / 10 / 25
+   * allows keys to be Recognized on the map
+   */
+
 public class First_door : MonoBehaviour
 {
     //Start is called before the fist frame update 
-    public int redLocks = 1;  //how many keys needed to open this door
+    public int redLocks = 1;
+    public int pinkLocks = 1;
+    public int blueLocks = 1;
+    //how many keys needed to open this door
     private void OnCollisionEnter(Collision other)
     {
         //Check if player collided with this door 
@@ -15,19 +24,20 @@ public class First_door : MonoBehaviour
             Player playerScript = other.gameObject.GetComponent<Player>();
 
             //Check if player key is >= this doors number of locks 
-            if (playerScript.redKeys >= redLocks)
+            if (playerScript.redKeys >= redLocks && playerScript.pinkKeys >= pinkLocks && playerScript.blueKeys >= blueLocks) 
             {
                 print("working door");
                 //reduce player key amount and destroy door
                 playerScript.redKeys -= redLocks;
+                playerScript.pinkKeys -= pinkLocks;
+                playerScript.blueKeys -= blueLocks;
                 Destroy(gameObject);
 
 
             }
 
 
-
-
+            
 
 
         }
