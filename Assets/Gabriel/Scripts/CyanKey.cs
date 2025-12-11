@@ -5,14 +5,16 @@ using UnityEngine;
 public class CyanKey : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    //after character collides with a key 
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //recognize that the player ran into the key
+        if (other.tag == "Player")
+        {
+            //the player collects a key, the key is destroyed 
+            other.GetComponent<Player>().cyanKeys++;
+            Destroy(gameObject);
+        }
     }
 }

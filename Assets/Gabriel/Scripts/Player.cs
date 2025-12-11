@@ -15,6 +15,6 @@ public class Player : MonoBehaviour
     public int pinkKeys = 0;
     public int cyanKeys = 0;
     public int purpleKeys= 0;
-
+    public int goldKeys = 0;
 
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 /*
  * Gabriel Delatorre 
  * 12/10/2025
- * Creates pink key to open doors
+ * Creates blue key to open doors
  */
 public class BlueKey : MonoBehaviour
 {
