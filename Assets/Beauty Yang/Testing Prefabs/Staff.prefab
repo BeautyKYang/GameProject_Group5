@@ -27,11 +27,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609405653583396218}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.00000020861623, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.4725336, y: -0.5068, z: 0.87538946}
-  m_LocalScale: {x: 0.13943489, y: 0.79943395, z: 0.13943489}
+  m_LocalScale: {x: 0.13943487, y: 0.799434, z: 0.13943487}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6611983025962658526}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &234356226464853120
@@ -107,3 +108,34 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!1 &4181237862906583243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6611983025962658526}
+  m_Layer: 0
+  m_Name: AimPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6611983025962658526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4181237862906583243}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.36112726, y: 0.5822429, z: -0.37785897, w: 0.6227383}
+  m_LocalPosition: {x: 0.08, y: 0.929, z: -0.07}
+  m_LocalScale: {x: 7.087644, y: 3.6331494, z: 1.5106428}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4235947700707400267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

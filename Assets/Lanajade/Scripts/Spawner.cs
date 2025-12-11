@@ -18,9 +18,9 @@ public class Spawner : MonoBehaviour
     public float timeBetweenShots;
     public float startDelay;
 
-    //coroutine variables
-    public float shootingRate = 1f;
-    public bool useFireBall = true;
+    ////coroutine variables
+    //public float shootingRate = 1f;
+    //public bool useFireBall = true;
 
     private void Start()
     {

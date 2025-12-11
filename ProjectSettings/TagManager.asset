@@ -12,6 +12,7 @@ TagManager:
   - WhatIsGround
   - Ingredient
   - Key
+  - Cover
   layers:
   - Default
   - TransparentFX
